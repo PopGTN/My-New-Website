@@ -2,14 +2,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import React from "react";
+import React, {useState} from "react";
+import '../styles/custom.scss';
 
 function Menu() {
   const image = require('../icon.png')
+  const [show, setShow] = useState(false);
+  const hideDropdown = (e: any) => {
+    setShow(false);
+  }
+  const showDropdown = (e: any)=>{
+    setShow(!show);
+  }
   return (
-      <Navbar bg="light" expand="lg">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="p-3" sticky="top" >
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
                 alt=""
                 src={image}
@@ -23,16 +31,20 @@ function Menu() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="">n</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <Nav.Link href="/about">About</Nav.Link>
+              <NavDropdown title="My Other Websites" id="basic-nav-dropdown"
+                           show={show}
+                           onMouseEnter={showDropdown}
+                           onMouseLeave={hideDropdown}
+                           renderMenuOnMount={true}
+
+              >
+                <NavDropdown.Item href="https://about.joshuamc.ca" target="_blank">Socials</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.linkedin.com/in/joshua-mckenna-a123a2258/" target="_blank">Linkedin</NavDropdown.Item>
+                <NavDropdown.Item href="https://github.com/PopGTN" target="_blank">My Github</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item>
+                  My Website
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -43,3 +55,6 @@ function Menu() {
 }
 
 export default Menu;
+
+
+

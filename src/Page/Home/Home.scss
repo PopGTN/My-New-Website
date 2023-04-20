@@ -1,2 +1,29 @@
 @import "src/styles/custom";
 
+.imageshead {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+  background: black;
+
+}
+.img1{
+  filter: blur(3px);
+  object-position: center;
+}
+.img2{
+  filter: blur(2px);
+  object-position: top;
+}
+.img3{
+  filter: blur(2px);
+ object-position: center;
+}
+
+.headerText h1{
+  font-size: 4em !important;
+}
+
+.headerText p{
+  font-size: 1.5em !important;
+}

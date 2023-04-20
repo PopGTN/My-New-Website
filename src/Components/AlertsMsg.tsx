@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
-import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 
 function AlertsMsg(props: any) {
     const [showA, setShowA] = useState(true);
-
-    let isFunc: boolean = false;
     const toggleShowA = () => setShowA(!showA);
     return (
-            <ToastContainer className="p-3" position="bottom-end">
+            <ToastContainer className="p-3 position-fixed" position="bottom-end">
                 <Toast show={showA} onClose={toggleShowA}>
                     <Toast.Header>
                         <img
