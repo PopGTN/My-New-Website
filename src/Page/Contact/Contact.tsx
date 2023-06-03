@@ -14,7 +14,8 @@ import {Helmet} from "react-helmet-async";
             </Helmet>
             <Menu />
             <Container>
-                <h1></h1>
+                <h1>Socials</h1>
+
             </Container>
 
         </>

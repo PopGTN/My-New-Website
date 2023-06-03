@@ -1,5 +1,4 @@
 {
-  "homepage": "https://new.joshuamc.ca/",
   "name": "first-react-website",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +11,9 @@
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "@types/react-helmet": "^6.1.6",
+    "babel-loader": "^9.1.2",
     "bootstrap": "^5.2.3",
+    "npm": "^9.6.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,8 +24,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -49,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
     "react-bootstrap": "^2.7.4",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
